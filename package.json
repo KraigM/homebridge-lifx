@@ -10,5 +10,7 @@
     "url": "git://github.com/nfarina/homebridge.git"
   },
   "license": "ISC",
-  "dependencies": null
+  "dependencies": {
+    "lifx-api": "^1.0.1"
+  }
 }
