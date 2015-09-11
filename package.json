@@ -11,6 +11,7 @@
   },
   "license": "ISC",
   "dependencies": {
+    "lifx": "https://github.com/magicmonkey/lifxjs.git",
     "lifx-api": "^1.0.1"
   }
 }
