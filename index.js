@@ -16,14 +16,22 @@
 // The default code for all HomeBridge accessories is 031-45-154.
 //
 
-var Service = require("../api").homebridge.hap.Service;
-var Characteristic = require("../api").homebridge.hap.Characteristic;
-var lifxRemoteObj = require('lifx-api');
-var lifx_remote;
-
+var Service, Characteristic;
 var lifxLanObj;
 var lifx_lan;
 var use_lan;
+
+var lifxRemoteObj = require('lifx-api');
+var lifx_remote;
+
+//module.exports.accessory = LIFxBulbAccessory;
+//module.exports.platform = LIFxPlatform;
+module.exports = function(homebridge) {
+  Service = homebridge.hap.Service;
+  Characteristic = homebridge.hap.Characteristic;
+
+  homebridge.registerPlatform("homebridge-lifx", "LIFx", LIFxPlatform);
+}
 
 function LIFxPlatform(log, config){
     // auth info
@@ -298,5 +306,3 @@ LIFxBulbAccessory.prototype = {
     }
 }
 
-module.exports.accessory = LIFxBulbAccessory;
-module.exports.platform = LIFxPlatform;
